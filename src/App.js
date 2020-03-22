@@ -37,10 +37,18 @@ state = {
 
 addItem = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value)
-    console.log(e.target[1].value)
-    console.log(e.target[2].value)
-    console.log(e.target[3].value)
+
+    const newItem = {
+        image: e.target[0].value,
+        name: e.target[1].value,
+        description: e.target[2].value,
+        twitterLink: e.target[3].value,
+    }
+    this.setState(prevState => ( {
+        items: [...prevState.items, newItem]
+    }));
+    e.target.reset();
+
 }
 
 render()
