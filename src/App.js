@@ -39,10 +39,10 @@ addItem = (e) => {
     e.preventDefault();
 
     const newItem = {
-        image: e.target[0].value,
-        name: e.target[1].value,
-        description: e.target[2].value,
-        twitterLink: e.target[3].value,
+        name: e.target[0].value,
+        twitterLink: e.target[1].value,
+        image: e.target[2].value,
+        description: e.target[3].value,
     }
     this.setState(prevState => ( {
         items: [...prevState.items, newItem]
