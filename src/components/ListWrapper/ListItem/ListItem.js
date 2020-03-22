@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
 import PropTypes from 'prop-types';
+import Button from "../../Button/Button";
+import Title from "../../Title/Title";
 
 const ListItem = ({image, name, description, twitterLink}) => {
     return (
@@ -10,11 +12,9 @@ const ListItem = ({image, name, description, twitterLink}) => {
                 className={styles.image}
                 alt={name}/>
             <div>
-                <h2 className={styles.name}>{name}</h2>
+                <Title>{name}</Title>
                 <p className={styles.description}>{description}</p>
-                <a href={twitterLink} target="_blank" className={styles.button}>
-                    visit twitter page
-                </a>
+                <Button href={twitterLink}>view Twitter</Button>
             </div>
         </li>
     )
