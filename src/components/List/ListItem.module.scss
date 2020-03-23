@@ -1,12 +1,12 @@
 @keyframes appear {
-    0% {
-        opacity: 0;
-        top: 35px;
-    }
-    100% {
-        opacity: 1;
-        top: 0;
-    }
+  0% {
+    opacity: 0;
+    top: 35px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
 .wrapper {
@@ -27,15 +27,10 @@
 }
 
 .imageNone {
-    @extend .image;
-    background-color: yellow;
-    background-size: cover;
-}
-
-.name {
-    margin: 0;
-    color: #1E58FF;
-    font-weight: 700;
+  @extend .image;
+  
+  background: url('https://unsplash.it/200/200') no-repeat;
+  background-size: cover;
 }
 
 .description {
