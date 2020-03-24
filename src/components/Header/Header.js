@@ -4,11 +4,11 @@ import HeaderNavigation from "./HeaderNavigation";
 import styles from './Header.module.scss'
 import logoImage from '../../assets/images/logo.svg';
 
-const Header = () => (
+const Header = ({openModalFn}) => (
     <header className={styles.wrapper}>
         <img src={logoImage} alt="Logo"/>
         <HeaderNavigation/>
-        <Button secondary>new item</Button>
+        <Button onClick={openModalFn} secondary>new item</Button>
     </header>
 );
 
