@@ -20,33 +20,28 @@ const descriptions = {
 
 class Form extends React.Component {
     state = {
-        activeOption: types.twitter,
-        title: '',
-        link: '',
-        image: '',
-        description: '',
+        type: types.twitter,
+        title: "",
+        link: "",
+        image: "",
+        description: "",
     };
 
     handleRadioButtonChange = type => {
         this.setState({
-            activeOption: type,
+            type: type,
         });
     };
+
     handleInputChange = e => {
         this.setState({
-            [e.target.name]: e.target.value
-        })
-        console.log(`
-        title: ${this.state.title},
-        link: ${this.state.link},
-        image: ${this.state.image},
-        description: ${this.state.description},
-        `)
+            [e.target.name]: e.target.value,
+        });
 
     };
 
     render() {
-        const { type } = this.state;
+        const {type} = this.state;
 
         return (
             <AppContext.Consumer>
@@ -56,7 +51,7 @@ class Form extends React.Component {
                         <form
                             autoComplete="off"
                             className={styles.form}
-                            onSubmit={context.addItem}
+                            onSubmit={(e) => context.addItem(e, this.state)}
                         >
                             <div className={styles.formOptions}>
                                 <Radio
@@ -88,7 +83,6 @@ class Form extends React.Component {
                                 label={
                                     type === types.twitter ? "Twitter Name" : "Title"
                                 }
-                                maxLength={30}
                             />
                             {type !== types.note ? (
                                 <Input
