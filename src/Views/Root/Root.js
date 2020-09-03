@@ -18,7 +18,6 @@ class Root extends React.Component {
 
     addItem = (e, newItem) => {
         e.preventDefault();
-
         this.setState(prevState => ({
             [newItem.type]: [...prevState[newItem.type], newItem],
         }));
@@ -30,6 +29,7 @@ class Root extends React.Component {
         this.setState({
             isModalOpen: true,
         })
+
     }
 
     closeModal = () => {
